@@ -1,0 +1,1013 @@
+{
+  "contractName": "HospitalRecord",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "doctorList",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x127ca4b4"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "patientList",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xbabb1d41"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b5061013c806100206000396000f3fe60806040526004361061004b5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663127ca4b48114610050578063babb1d41146100a3575b600080fd5b34801561005c57600080fd5b5061007a6004803603602081101561007357600080fd5b50356100cd565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100af57600080fd5b5061007a600480360360208110156100c657600080fd5b5035610102565b60018054829081106100db57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b60008054829081106100db57fefea165627a7a723058204a48d67babe02a90c207aa53ac8f1798fa0e75e70237acafb7635e1bd67eb3210029",
+  "deployedBytecode": "0x60806040526004361061004b5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663127ca4b48114610050578063babb1d41146100a3575b600080fd5b34801561005c57600080fd5b5061007a6004803603602081101561007357600080fd5b50356100cd565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b3480156100af57600080fd5b5061007a600480360360208110156100c657600080fd5b5035610102565b60018054829081106100db57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b60008054829081106100db57fefea165627a7a723058204a48d67babe02a90c207aa53ac8f1798fa0e75e70237acafb7635e1bd67eb3210029",
+  "sourceMap": "25:476:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:476:0;;;;;;;",
+  "deployedSourceMap": "25:476:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;376:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;376:27:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;376:27:0;;;;;;;;;;;;;;;;;;;;;;341:28;;8:9:-1;5:2;;;30:1;27;20:12;5:2;341:28:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;341:28:0;;;376:27;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;376:27:0;:::o;341:28::-;;;;;;;;;;",
+  "source": "pragma solidity ^0.5.0;\r\ncontract HospitalRecord{\r\n\r\n    struct patient {\r\n        string name;\r\n        uint age;\r\n        string password;\r\n        address[] doctorAccessList;\r\n        string[] patientRecordList;\r\n    }\r\n    struct doctor {\r\n        string name;\r\n        string password;\r\n        address[] patientAccessList;\r\n    }\r\n    address[] public patientList;\r\n    address[] public doctorList;\r\n\r\n    mapping (address => patient) patientInfo;\r\n    mapping (address => doctor) doctorInfo;\r\n}",
+  "sourcePath": "D:/SHAIMA/GI3/Matiere Blockchain Indus/Our_Project/contracts/HospitalRecord.sol",
+  "ast": {
+    "absolutePath": "/D/SHAIMA/GI3/Matiere Blockchain Indus/Our_Project/contracts/HospitalRecord.sol",
+    "exportedSymbols": {
+      "HospitalRecord": [
+        37
+      ]
+    },
+    "id": 38,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 37,
+        "linearizedBaseContracts": [
+          37
+        ],
+        "name": "HospitalRecord",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "HospitalRecord.patient",
+            "id": 14,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "83:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "83:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "age",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "105:8:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "105:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "password",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "124:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "124:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "name": "doctorAccessList",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "150:26:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 8,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "150:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "150:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13,
+                "name": "patientRecordList",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "187:26:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 11,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "187:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "id": 12,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "187:8:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                    "typeString": "string[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "patient",
+            "nodeType": "StructDefinition",
+            "scope": 37,
+            "src": "57:164:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "HospitalRecord.doctor",
+            "id": 22,
+            "members": [
+              {
+                "constant": false,
+                "id": 16,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 22,
+                "src": "252:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "252:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 18,
+                "name": "password",
+                "nodeType": "VariableDeclaration",
+                "scope": 22,
+                "src": "274:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 17,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "274:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "patientAccessList",
+                "nodeType": "VariableDeclaration",
+                "scope": 22,
+                "src": "300:27:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 19,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 20,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "300:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "doctor",
+            "nodeType": "StructDefinition",
+            "scope": 37,
+            "src": "227:108:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 25,
+            "name": "patientList",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "341:28:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 23,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "341:7:0",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 24,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "341:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 28,
+            "name": "doctorList",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "376:27:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 26,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "376:7:0",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 27,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "376:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 32,
+            "name": "patientInfo",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "412:40:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_patient_$14_storage_$",
+              "typeString": "mapping(address => struct HospitalRecord.patient)"
+            },
+            "typeName": {
+              "id": 31,
+              "keyType": {
+                "id": 29,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "421:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "412:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_patient_$14_storage_$",
+                "typeString": "mapping(address => struct HospitalRecord.patient)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 30,
+                "name": "patient",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 14,
+                "src": "432:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_patient_$14_storage_ptr",
+                  "typeString": "struct HospitalRecord.patient"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 36,
+            "name": "doctorInfo",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "459:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_doctor_$22_storage_$",
+              "typeString": "mapping(address => struct HospitalRecord.doctor)"
+            },
+            "typeName": {
+              "id": 35,
+              "keyType": {
+                "id": 33,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "468:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "459:27:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_doctor_$22_storage_$",
+                "typeString": "mapping(address => struct HospitalRecord.doctor)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 34,
+                "name": "doctor",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 22,
+                "src": "479:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_doctor_$22_storage_ptr",
+                  "typeString": "struct HospitalRecord.doctor"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 38,
+        "src": "25:476:0"
+      }
+    ],
+    "src": "0:501:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/SHAIMA/GI3/Matiere Blockchain Indus/Our_Project/contracts/HospitalRecord.sol",
+    "exportedSymbols": {
+      "HospitalRecord": [
+        37
+      ]
+    },
+    "id": 38,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 37,
+        "linearizedBaseContracts": [
+          37
+        ],
+        "name": "HospitalRecord",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "HospitalRecord.patient",
+            "id": 14,
+            "members": [
+              {
+                "constant": false,
+                "id": 3,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "83:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 2,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "83:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 5,
+                "name": "age",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "105:8:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 4,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "105:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 7,
+                "name": "password",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "124:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 6,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "124:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "name": "doctorAccessList",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "150:26:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 8,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "150:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 9,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "150:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 13,
+                "name": "patientRecordList",
+                "nodeType": "VariableDeclaration",
+                "scope": 14,
+                "src": "187:26:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                  "typeString": "string[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 11,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "187:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "id": 12,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "187:8:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_string_storage_$dyn_storage_ptr",
+                    "typeString": "string[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "patient",
+            "nodeType": "StructDefinition",
+            "scope": 37,
+            "src": "57:164:0",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "HospitalRecord.doctor",
+            "id": 22,
+            "members": [
+              {
+                "constant": false,
+                "id": 16,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 22,
+                "src": "252:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "252:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 18,
+                "name": "password",
+                "nodeType": "VariableDeclaration",
+                "scope": 22,
+                "src": "274:15:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 17,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "274:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 21,
+                "name": "patientAccessList",
+                "nodeType": "VariableDeclaration",
+                "scope": 22,
+                "src": "300:27:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 19,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "300:7:0",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 20,
+                  "length": null,
+                  "nodeType": "ArrayTypeName",
+                  "src": "300:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "doctor",
+            "nodeType": "StructDefinition",
+            "scope": 37,
+            "src": "227:108:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 25,
+            "name": "patientList",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "341:28:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 23,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "341:7:0",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 24,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "341:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 28,
+            "name": "doctorList",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "376:27:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_address_$dyn_storage",
+              "typeString": "address[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 26,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "376:7:0",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "id": 27,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "376:9:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                "typeString": "address[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 32,
+            "name": "patientInfo",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "412:40:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_patient_$14_storage_$",
+              "typeString": "mapping(address => struct HospitalRecord.patient)"
+            },
+            "typeName": {
+              "id": 31,
+              "keyType": {
+                "id": 29,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "421:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "412:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_patient_$14_storage_$",
+                "typeString": "mapping(address => struct HospitalRecord.patient)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 30,
+                "name": "patient",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 14,
+                "src": "432:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_patient_$14_storage_ptr",
+                  "typeString": "struct HospitalRecord.patient"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 36,
+            "name": "doctorInfo",
+            "nodeType": "VariableDeclaration",
+            "scope": 37,
+            "src": "459:38:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_struct$_doctor_$22_storage_$",
+              "typeString": "mapping(address => struct HospitalRecord.doctor)"
+            },
+            "typeName": {
+              "id": 35,
+              "keyType": {
+                "id": 33,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "468:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "459:27:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_struct$_doctor_$22_storage_$",
+                "typeString": "mapping(address => struct HospitalRecord.doctor)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 34,
+                "name": "doctor",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 22,
+                "src": "479:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_doctor_$22_storage_ptr",
+                  "typeString": "struct HospitalRecord.doctor"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 38,
+        "src": "25:476:0"
+      }
+    ],
+    "src": "0:501:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x7332237C8691ff7Baec34545aFbD745A921d01b9",
+      "transactionHash": "0x4b5bd741322324cb6d557d82fac489d4114f11e9e5dc58c171953b9b3ab922ff"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2021-12-05T15:30:32.016Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
