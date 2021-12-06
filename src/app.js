@@ -1,6 +1,6 @@
 
 App = {
-    //loading: false,
+    loading: false,
     var: Web3 = require("web3"),
     contracts: {},
     load: async () => {
@@ -59,20 +59,20 @@ App = {
 
   },
 
-  render: async () => {
-    // Prevent double render
-    if (App.loading){
-        return
-    }
-    // //update app loading state
-    // App.setLoading(true)
+  // render: async () => {
+  //   // Prevent double render
+  //  // if (App.loading){
+  //     //  return
+  //  // }
+  //   // //update app loading state
+  //     //App.setLoading(true)
 
-      //Render Account
-      $('#account').html(App.account)
+  //     //Render Account
+  //     $('#account').html(App.account)
 
-    //   //update app loading state
-    // App.setLoading(false)
-  },
+  //   //   //update app loading state
+  //   //App.setLoading(false)
+  // },
 
   renderRecords: async () => {
     //load the total record count from the blockchain
@@ -84,8 +84,8 @@ App = {
         //Fetch the record data from the blockchain
         const record = await App.hospitalRecord.records(i)
         const recordId = record[0].toNumber()
-        const doctorNname= record[2]
-        const patientNname= record[3]
+        const doctorName= record[2]
+        const patientName= record[3]
         const patientAge= record[4].toNumber()
         const recordDiagnostic= record[5]
         const recordMedication= record[6]
@@ -103,19 +103,33 @@ App = {
 // Show the record
 $newRecordTemplate.show()
 },
+createRecord: async () => {
+  const doctorName=$('#doctor_name').val()
+  const patientName=$('#patient_name').val()
+  const patientAge=$('#patient_age').val()
+  const recordDiagnostic=$('#diagnostic').val()
+  const recordMedication=$('#medication').val()
+  await App.hospitalRecord.createRecord(doctorName)
+  await App.hospitalRecord.createRecord(patientName)
+  await App.hospitalRecord.createRecord(patientAge)
+  await App.hospitalRecord.createRecord(recordDiagnostic)
+  await App.hospitalRecord.createRecord(recordMedication)
+  window.location.reload()
+},
+}
 
-  // setLoading: (boolean) => {
-  //   App.loading = boolean
-  //   const loader = $('#loader')
-  //   const content = $('#content')
-  //   if (boolean) {
-  //     loader.show()
-  //     content.hide()
-  //   } else {
-  //     loader.hide()
-  //     content.show()
-  //   }
-  // }
+//   setLoading: (boolean) => {
+//   App.loading = boolean
+//   const loader = $('#loader')
+// const content = $('#content')
+//    if (boolean) {
+//    loader.show()
+//   content.hide()
+//   } else {
+//     loader.hide()
+//     content.show()
+//     }
+//    }
 }
 
 $(()=> {

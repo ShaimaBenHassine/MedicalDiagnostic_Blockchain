@@ -12,4 +12,12 @@ contract('HospitalRecord', (accounts) => {
     assert.notEqual(address, null)
     assert.notEqual(address, undefined)
   })
+  it('creates records', async () => {
+    const result = await this.hospitalRecord.createRecord('shaima')
+    const recordCount = await this.hospitalRecord.recordCount()
+    assert.equal(recordCount, 2)
+    const event = result.logs[0].args
+    assert.equal(event.id.toNumber(), 1)
+    assert.equal(event.patientName, 'shaima')
+  })
 })
