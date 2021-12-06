@@ -15,7 +15,7 @@ contract HospitalRecord{
         string password;
         address[] patientAccessList;
     }
-      struct Record {
+    struct Record {
         uint id; 
         string doctor_name;
         string patient_name;
@@ -47,11 +47,28 @@ contract HospitalRecord{
     //     patientList.push(addr)-1;
     // }
     function createRecord(string memory _doctor_name,string memory _patient_name,uint _patient_age, string memory _diagnostic,string memory _medication) public {
+
         recordCount ++;
         records[recordCount] = Record(recordCount, _doctor_name,_patient_name,_patient_age,_diagnostic,_medication);
         emit RecordCreated(recordCount, _doctor_name, _patient_name, _patient_age, _diagnostic, _medication);
     }
 
+    function getRecord(uint id) public returns (string memory _doctor_name,string memory _patient_name,uint _patient_age, string memory _diagnostic,string memory _medication){
+
+         Record memory rec = records[id];
+
+	    return (rec.doctor_name, rec.patient_name, rec.patient_age, rec.diagnostic, rec.medication);
+        }
+
+    function updateRecord(uint id,string calldata _doctor_name,string calldata _patient_name,uint _patient_age, string calldata _diagnostic,string calldata _medication) external {
+		Record storage rec = records[id];
+
+		rec.doctor_name =_doctor_name;
+		rec.patient_name = _patient_name;
+		rec.patient_age = _patient_age;
+		rec.diagnostic = _diagnostic;
+		 rec.medication = _medication;
+	}
 
 
 }

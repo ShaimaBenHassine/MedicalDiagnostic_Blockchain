@@ -18,6 +18,9 @@
     <![endif]-->
 
     <style>
+    .container {
+            margin-left: 100px;
+        }
       main {
         margin-top: 60px;
       }
@@ -34,49 +37,104 @@
       ul {
         margin-bottom: 0px;
       }
-
-      /* #completedTaskList .content {
-        color: grey;
-        text-decoration: line-through;
-      } */
     </style>
   </head>
-  <body>
+  <body style="background-image:url('image4.png') ;background-repeat: no-repeat; background-size: cover;">
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" target="_blank">Hospital Record</a>
-      <ul class="navbar-nav px-3">
-        <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
-          <small><a class="nav-link" href="#"><span id="account"></span></a></small>
-        </li>
-      </ul>
-    </nav>
-    <div class="container-fluid">
-      <div class="row">
-        <main role="main" class="col-lg-12 d-flex justify-content-center">
-          <div id="content">
-            <form onSubmit="App.createRecord(); return false;">
-              <input id="newRecord" type="text" class="form-control" placeholder="Add task..." required>
-              <input id="doctor_name" type="text" class="form-control" placeholder="doctor name" required>
-              <input id="patient_name" type="text" class="form-control" placeholder="patient name" required>
-              <input id="patient_age" type="text" class="form-control" placeholder="patient age" required>
-              <textarea id="diagnostic" name="story" rows="5" placeholder="Health diagnostics" required></textarea>
-              <input id="medication" type="text" class="form-control" placeholder="medications" required>
-              <input type="submit" hidden="">
-            </form>
-             
-            <ul id="recordList" class="list-unstyled">
-              <div class="recordTemplate" class="checkbox" style="display: none">
-                <label>
-                  <input type="checkbox" />
-                  <span class="content">Records content goes here...</span>
-                </label>
-              </div>
-            </ul>
-            <!-- <ul id="completedRecordList" class="list-unstyled">
-            </ul> -->
-          </div>
-        </main>
-      </div>
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#" target="_blank">Hospital Health Record</a>
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
+            <small><a class="nav-link" href="#"><span id="account"></span></a></small>
+          </li>
+        </ul>
+      </nav>
+
+    <div class="container">
+        <br><br><br><br>
+        <!-- https://getbootstrap.com/docs/4.1/layout/grid/ -->
+
+        <div class="row"  style="margin-left: 500px";>
+            <div class="col-md-6">
+                <h2 style="text-align: center;">Add Medical Record</h2>
+                <hr>
+                <br>
+                <div id="errors"></div>
+                <form onSubmit="App.createRecord(); return false;">
+                    <label for="DoctorName" class="control-label" style="text-decoration: solid;">Doctor Name</label>
+                    <input id="doctor_name" type="text" class="form-control"required>
+                    <br>
+                    <label for="patientName" class="control-label">Patient Name</label>
+                    <input id="patient_name" type="text"  class="form-control"required>
+                    <br>
+                    <label for="patientAge" class="control-label">Patient Age</label>
+                    <input id="patient_age" type="text" class="form-control" required>
+                    <br>
+                    <label for="diagnostic" class="control-label">Diagnostic</label>
+                    <textarea id="diagnostic" name="story" class="form-control" rows="5"required></textarea>
+                    <br>
+                    <label for="medication" class="control-label">Medications</label>
+                    <input id="medication" type="text" class="form-control"  required>
+                    <br>
+                    <input type="submit" class="form-control" text="submit">
+                </form>
+            </div>
+            <div class="col-md-8">
+                <div id="transactions">
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row"style= "margin-left: 500px">
+            <div class="col-md-8">
+            <h2 style="text-align: center;">Retrieve patient's information</h2>
+            <hr>
+            <br>
+                <form>
+                    <label for="report_id" class="control-label">Patient ID</label>
+                    <input id="report_id" type="text" class="form-control" required>
+                    <br>
+                    <input type="submit" class="form-control" placeholder="get patient's information" >
+                </form>
+            </div>
+            <div class="col-md-8" id="records">
+            </div>
+        </div>
+        
+        <br>
+        <div class="row" style= "margin-left: 500px">
+            <div class="col-md-8">
+                <h2 style="text-align: center;">Update Record</h2>
+                <hr>
+                <div id="errors"></div>
+                
+                <form onSubmit="App.updateRecord(); return false;">
+                    <label for="update_DoctorName" class="control-label">Doctor Name</label>
+                    <input id="update_doctor_name" type="text" class="form-control"  required>
+                    <br>
+                    <label for="update_patientName" class="control-label">Patient Name</label>
+                    <input id="update_patient_name" type="text"  class="form-control" required>
+                    <br>
+                    <label for="update_patientAge" class="control-label">Patient Age</label>
+                    <input id="patient_age" type="text" class="form-control" required>
+                    <br>
+                    <label for="update_diagnostic" class="control-label">Diagnostic</label>
+                    <textarea id="diagnostic" name="story" class="form-control" rows="5"required></textarea>
+                    <br>
+                    <label for="update_medication" class="control-label">Medications</label>
+                    <input id="update_medication" type="text" class="form-control"required>
+                    <br>
+                    <input type="submit" class="form-control" text="submit">
+                </form>
+            </div>
+
+            <div class="col-md-8">
+                <div id="updateTransactions">
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -85,5 +143,6 @@
     <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="vendor/truffle-contract/dist/truffle-contract.js"></script>
     <script src="app.js"></script>
+    <!-- <script src="js/web3.min.js"></script> -->
   </body>
 </html>

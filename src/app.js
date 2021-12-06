@@ -1,6 +1,6 @@
 
 App = {
-    loading: false,
+    //loading: false,
     var: Web3 = require("web3"),
     contracts: {},
     load: async () => {
@@ -59,7 +59,9 @@ App = {
 
   },
 
-  // render: async () => {
+  render: async () => {
+    const content = $('#content')
+    content.show()
   //   // Prevent double render
   //  // if (App.loading){
   //     //  return
@@ -72,7 +74,7 @@ App = {
 
   //   //   //update app loading state
   //   //App.setLoading(false)
-  // },
+  },
 
   renderRecords: async () => {
     //load the total record count from the blockchain
@@ -130,7 +132,6 @@ createRecord: async () => {
 //     content.show()
 //     }
 //    }
-}
 
 $(()=> {
     $(window).load(() => {
