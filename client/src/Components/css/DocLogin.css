@@ -1,0 +1,28 @@
+.form{
+    background-color: #f8f9fa;
+    /* height: 50%;
+    width: 50%; 
+    top:50%;
+    padding-top: 250px; */
+    height: 200px;
+    width: 400px;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -200px;
+
+}
+.button{
+    padding:5px;
+    margin:10px;
+}
+.label{
+    width: 200px;
+    
+}
+.label,input{
+    display: inline-block;
+    margin:2px;
+}
